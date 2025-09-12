@@ -26,19 +26,20 @@
       };
   in
   {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#tbl-macbook
+    # Apply darwin flake using:
+    # $ darwin-rebuild switch --flake ~/.config/nix#tbl-macbook
     darwinConfigurations."tbl-macbook" = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/host-users.nix
-        home-manager.darwinModules.home-manager  {
-          home-manager.useGlobalPkgs = true;
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.verbose = true;
-          home-manager.users.${username} = ./modules/home-manager.nix;
+          home-manager.users.${username} = import ./modules/home-manager.nix;
         }
         ./modules/apps.nix
         ./modules/homebrew.nix

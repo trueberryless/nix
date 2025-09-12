@@ -15,7 +15,7 @@
 
     # `brew install`
     brews = [
-      
+      "gh"
     ];
 
     # `brew install --cask`
