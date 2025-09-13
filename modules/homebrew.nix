@@ -20,6 +20,9 @@
 
     # `brew install --cask`
     casks = [
+      "beeper"
+      "clipbook"
+      "font-fira-code-nerd-font"
       "spotify"
       "visual-studio-code"
       "zen"

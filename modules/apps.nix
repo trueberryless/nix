@@ -6,7 +6,6 @@
     docker
     iterm2
     neofetch
-    nerd-fonts.fira-code
     oh-my-posh
     tmux
     zoxide

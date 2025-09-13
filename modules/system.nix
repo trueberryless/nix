@@ -18,6 +18,10 @@
       screencapture = {
         target = "clipboard";
       };
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
       finder = {
         AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
@@ -31,5 +35,4 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
-
 }
