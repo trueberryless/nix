@@ -1,4 +1,3 @@
-
 { hostname, username, ... }:
 {
   networking.hostName = hostname;
