@@ -16,6 +16,7 @@
     # `brew install`
     brews = [
       "gh"
+      "oh-my-posh"
     ];
 
     # `brew install --cask`
@@ -23,6 +24,7 @@
       "beeper"
       "clipbook"
       "font-fira-code-nerd-font"
+      "processing"
       "spotify"
       "visual-studio-code"
       "zen"

@@ -2,13 +2,14 @@
 {
   environment.systemPackages = with pkgs; [
     aldente
-    bartender
     discord
     docker
     iterm2
+    jetbrains.idea-ultimate
+    jetbrains.rider
     neofetch
+    pnpm
     raycast
-    oh-my-posh
     tmux
     zoxide
   ];

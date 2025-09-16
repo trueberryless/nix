@@ -33,7 +33,7 @@
       modules = [
         home-manager.darwinModules.home-manager
         {
-          home-manager.useGlobalPkgs = false;
+          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.verbose = true;
           home-manager.users.${username} = {
