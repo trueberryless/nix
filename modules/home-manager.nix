@@ -4,16 +4,7 @@
   programs.home-manager.enable = true;    
   home.packages = with pkgs; [];
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-  };
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/.config/nix";
-    };
-  };
+  home.file.".zshrc".source = ../dotfiles/.zshrc;
 
   programs.git = {
     enable = true;
