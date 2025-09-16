@@ -15,8 +15,8 @@
 
   outputs = inputs @ { self, nixpkgs, nix-darwin, home-manager }:
   let
-    username = "trueberryless";
     system = "aarch64-darwin";
+    username = "trueberryless";
     hostname = "tbl-macbook";
 
     specialArgs =
@@ -31,16 +31,18 @@
     darwinConfigurations."tbl-macbook" = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.verbose = true;
+          home-manager.users.${username} = {
+            imports = [ ./modules/home-manager.nix ];
+          };
+        }
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/host-users.nix
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = false;
-          home-manager.useUserPackages = true;
-          home-manager.verbose = true;
-          home-manager.users.${username} = import ./modules/home-manager.nix;
-        }
         ./modules/apps.nix
         ./modules/homebrew.nix
       ];

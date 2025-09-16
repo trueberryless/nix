@@ -1,12 +1,15 @@
-{ pkgs, system, ...}: 
+{ pkgs, system, ... }: 
 {
   environment.systemPackages = with pkgs; [
     aldente
     discord
     docker
     iterm2
+    jetbrains.idea-ultimate
+    jetbrains.rider
     neofetch
-    oh-my-posh
+    pnpm
+    raycast
     tmux
     zoxide
   ];
