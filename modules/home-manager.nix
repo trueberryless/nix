@@ -1,8 +1,15 @@
-{ pkgs, ... }: 
+{ pkgs, username, ... }:
 {
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
+
   home.stateVersion = "25.05";
-  programs.home-manager.enable = true;    
-  home.packages = with pkgs; [];
+  programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    jdk23
+    git
+  ];
 
   home.file.".zshrc".source = ../dotfiles/.zshrc;
 

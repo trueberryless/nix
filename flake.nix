@@ -28,23 +28,24 @@
   {
     # Apply darwin flake using:
     # $ darwin-rebuild switch --flake ~/.config/nix#tbl-macbook
-    darwinConfigurations."tbl-macbook" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
+        ./modules/host-users.nix
+        ./modules/nix-core.nix
+        ./modules/system.nix
+        ./modules/apps.nix
+        ./modules/homebrew.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.verbose = true;
-          home-manager.users.${username} = {
-            imports = [ ./modules/home-manager.nix ];
+          home-manager.extraSpecialArgs = {
+            inherit username;
           };
+          home-manager.users.${username} = import ./modules/home-manager.nix;
         }
-        ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/host-users.nix
-        ./modules/apps.nix
-        ./modules/homebrew.nix
       ];
     };
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
