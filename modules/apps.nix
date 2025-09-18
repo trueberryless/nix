@@ -5,7 +5,6 @@
     discord
     docker
     git
-    home-manager
     iterm2
     jetbrains.idea-ultimate
     jetbrains.rider
