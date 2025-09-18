@@ -4,6 +4,7 @@
     aldente
     discord
     docker
+    git
     iterm2
     jetbrains.idea-ultimate
     jetbrains.rider

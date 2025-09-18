@@ -8,9 +8,9 @@
 
   home.packages = with pkgs; [
     jdk23
-    git
   ];
 
+  programs.zsh.enable = true;
   home.file.".zshrc".source = ../dotfiles/.zshrc;
 
   programs.git = {
