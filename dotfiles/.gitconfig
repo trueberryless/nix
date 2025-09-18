@@ -1,0 +1,12 @@
+[user]
+  name = Felix Schneider
+  email = 99918022+trueberryless@users.noreply.github.com
+
+[init]
+  defaultBranch = main
+
+[push]
+  autoSetupRemote = true
+
+[pull]
+  rebase = true

@@ -40,7 +40,6 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.verbose = true;
           home-manager.extraSpecialArgs = {
             inherit username;
           };
@@ -48,6 +47,6 @@
         }
       ];
     };
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    # formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }

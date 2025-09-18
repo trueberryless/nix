@@ -22,6 +22,20 @@ After that command, `nix-darwin` is installed and you can run this command from 
 sudo darwin-rebuild switch --flake ~/.config/nix
 ```
 
+## Troubleshooting
+
+If your home-manager configuration files are not getting applied, the issue could be some messed up permissions of your `.local` folder, check them with:
+
+```bash
+ls -ld ~/.local
+```
+
+If those are not owned by **you** but maybe **root** instead, change the permissions and run the rebuild again:
+
+```bash
+sudo chown -R trueberryless:staff ~/.local
+```
+
 ## Resources
 
 - [Determinate Systems][determinate-systems]: [installer-repo][installer-repo], [Zero to Nix][zero-to-nix]
