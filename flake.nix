@@ -34,6 +34,7 @@
         ./modules/host-users.nix
         ./modules/nix-core.nix
         ./modules/system.nix
+        ./modules/sudo-alias.nix
         ./modules/apps.nix
         ./modules/homebrew.nix
         home-manager.darwinModules.home-manager
@@ -47,6 +48,6 @@
         }
       ];
     };
-    # formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }
