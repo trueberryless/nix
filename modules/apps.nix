@@ -12,6 +12,7 @@
     pnpm
     raycast
     tmux
+    tree
     zoxide
   ];
 
