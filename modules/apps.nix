@@ -10,7 +10,6 @@
       jetbrains.idea-ultimate
       jetbrains.rider
       neofetch
-      pnpm
       raycast
       tmux
       tree
