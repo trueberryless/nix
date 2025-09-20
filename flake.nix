@@ -22,7 +22,7 @@
     specialArgs =
       inputs
       // {
-        inherit username hostname;
+        inherit username hostname system;
       };
   in
   {
@@ -48,6 +48,15 @@
         }
       ];
     };
+
+    # devShells definition (separate from nix-darwin)
+    devShells.${system}.default =
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+        import ./modules/node-shell.nix { inherit pkgs system; };
+
+
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }

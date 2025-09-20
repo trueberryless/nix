@@ -1,4 +1,4 @@
-{ pkgs, system, ... }: 
+{ pkgs, ... }: 
 {
   environment.systemPackages = with pkgs; [
     aldente
