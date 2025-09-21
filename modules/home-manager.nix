@@ -11,7 +11,8 @@
   ];
 
   home.file = {
-    ".zshrc".source = ../dotfiles/.zshrc;
     ".gitconfig".source = ../dotfiles/.gitconfig;
+    ".zshrc".source = ../dotfiles/.zshrc;
+    "oh-my-posh.omp.json".source = ../dotfiles/oh-my-posh.omp.json;
   };
 }
