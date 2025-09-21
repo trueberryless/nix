@@ -2,7 +2,7 @@
 (let
   packages = with pkgs; [
     nodejs_20
-    nodePackages.pnpm
+    (pnpm.override { nodejs = nodejs_20; })
     zsh
   ];
 in pkgs.runCommand "dev-node20" {
