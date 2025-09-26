@@ -23,6 +23,7 @@
     casks = [
       "beeper"
       "clipbook"
+      "firefox"
       "font-fira-code-nerd-font"
       "processing"
       "spotify"
