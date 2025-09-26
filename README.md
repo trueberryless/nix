@@ -1,5 +1,8 @@
 # nix
 
+![Built with Nix](./docs/built-with-nix-badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/43cc5d10-6e0d-4fb0-8664-91eceabe90ae/deploy-status)](https://app.netlify.com/projects/trueberryless-nix/deploys)
+
 This is a project with my nix configuration for a MacBook (darwin).
 
 ## Installation
