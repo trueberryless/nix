@@ -19,10 +19,16 @@ Since git is configured with this repo, I recommend that you just download the Z
 nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/.config/nix
 ```
 
-After that command, `nix-darwin` is installed and you can run this command from now on to rebuild your config:
+After that command, `nix-darwin` is installed and you can run this command to rebuild your config:
 
 ```bash
 sudo darwin-rebuild switch --flake ~/.config/nix
+```
+
+Afterwards, this alias will be available to rebuild your config:
+
+```bash
+sudo nix-switch
 ```
 
 ## Troubleshooting
@@ -47,10 +53,34 @@ Be careful which user runs commands and which config file these users will use t
 
 ## Resources
 
-- [Determinate Systems][determinate-systems]: [installer-repo][installer-repo], [Zero to Nix][zero-to-nix]
-- [Blog: "Package management on macOS with nix-darwin" - Davi][davi-nix-darwin]
+I want to express my heartfelt gratitude to everyone who contributes to the Nix ecosystem.
 
-[determinate-systems]: https://docs.determinate.systems/
-[installer-repo]: https://github.com/DeterminateSystems/nix-installer
-[zero-to-nix]: https://zero-to-nix.com/
-[davi-nix-darwin]: https://davi.sh/blog/2024/01/nix-darwin/
+### Blog posts and documentation
+
+- [NixOS & Flakes Book - An unofficial book for beginners][this-cute-world] - [Ryan Yin][ryan4yin]
+- [Blog: "Managing dotfiles on macOS with Nix"][davi-home-manager] - [Davis Haupt][davish]
+
+### Repositories
+
+- [Nix][nix]
+- [Determinate Systems][determinate-systems]
+- [Home Manager][home-manager]
+- [nix.dev][nix-dev]
+- [Nix Darwin Kickstarter][nix-darwin-kickstarter] - [Ryan Yin][ryan4yin]
+- [Homebrew][homebrew]
+- [Zero to Nix][zero-to-nix]
+
+
+[this-cute-world]: https://nixos-and-flakes.thiscute.world/
+[davi-home-manager]: https://davi.sh/blog/2024/02/nix-home-manager/
+
+[davish]: https://github.com/davish/
+[ryan4yin]: https://github.com/ryan4yin
+
+[nix]: https://github.com/NixOS/nix
+[nix-dev]: https://github.com/nixos/nix.dev
+[homebrew]: https://github.com/Homebrew/brew
+[home-manager]: https://github.com/nix-community/home-manager
+[zero-to-nix]: https://github.com/DeterminateSystems/zero-to-nix
+[determinate-systems]: https://github.com/DeterminateSystems/nix-installer
+[nix-darwin-kickstarter]: https://github.com/ryan4yin/nix-darwin-kickstarter
