@@ -17,6 +17,7 @@ in {
       jetbrains.idea-ultimate
       jetbrains.rider
       neofetch
+      postman
       raycast
       tmux
       tree
