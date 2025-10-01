@@ -10,3 +10,6 @@
 
 [pull]
   rebase = true
+
+[core]
+  excludesFile = /Users/trueberryless/.gitignore
