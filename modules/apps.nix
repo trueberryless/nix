@@ -13,6 +13,7 @@ in {
       discord
       docker
       git
+      google-chrome
       iterm2
       jetbrains.idea-ultimate
       jetbrains.rider
