@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 let
   devShellPaths = [
     ./shells/node20.nix
@@ -10,18 +10,24 @@ in {
   environment.systemPackages =
     (with pkgs; [
       aldente
+      bitwarden-desktop
+      code-cursor
       discord
       docker
+      eza
       git
       google-chrome
       iterm2
       jetbrains.idea-ultimate
       jetbrains.rider
       neofetch
+      nixd
+      oh-my-posh
       postman
       raycast
       tmux
       tree
+      zed-editor
       zoxide
     ]) ++ devShells;
 

@@ -13,10 +13,16 @@ Download Nix with Determinate Systems and decline the `--determinate` option wit
 curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 ```
 
+Install homebrew separately with this command:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Since git is configured with this repo, I recommend that you just download the ZIP of the repo and unpack locally, save it to `~/.config/nix/` and execute:
 
 ```bash
-nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/.config/nix
+sudo nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake ~/.config/nix#tbl-macbook
 ```
 
 After that command, `nix-darwin` is installed and you can run this command to rebuild your config:

@@ -11,8 +11,10 @@
   ];
 
   home.file = {
+    ".alias".source = ../dotfiles/.alias;
     ".gitconfig".source = ../dotfiles/.gitconfig;
     ".gitignore".source = ../dotfiles/.gitignore;
+    ".zprofile".source = ../dotfiles/.zprofile;
     ".zshrc".source = ../dotfiles/.zshrc;
     "oh-my-posh.omp.json".source = ../dotfiles/oh-my-posh.omp.json;
   };

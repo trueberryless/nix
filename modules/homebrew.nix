@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ ... }:
 {
   # To make this work, homebrew need to be installed manually, see https://brew.sh
   #
@@ -16,7 +16,6 @@
     # `brew install`
     brews = [
       "gh"
-      "oh-my-posh"
     ];
 
     # `brew install --cask`
@@ -24,8 +23,6 @@
       "beeper"
       "clipbook"
       "firefox"
-      "font-fira-code-nerd-font"
-      "processing"
       "spotify"
       "visual-studio-code"
       "zen"

@@ -26,17 +26,15 @@
       };
   in
   {
-    # Apply darwin flake using:
-    # $ darwin-rebuild switch --flake ~/.config/nix#tbl-macbook
     darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
+        ./modules/apps.nix
+        ./modules/fonts.nix
+        ./modules/homebrew.nix
         ./modules/host-users.nix
         ./modules/nix-core.nix
         ./modules/system.nix
-        ./modules/sudo-alias.nix
-        ./modules/apps.nix
-        ./modules/homebrew.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
