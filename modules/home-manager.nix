@@ -11,11 +11,14 @@
   ];
 
   home.file = {
-    ".alias".source = ../dotfiles/.alias;
-    ".gitconfig".source = ../dotfiles/.gitconfig;
-    ".gitignore".source = ../dotfiles/.gitignore;
-    ".zprofile".source = ../dotfiles/.zprofile;
-    ".zshrc".source = ../dotfiles/.zshrc;
-    "oh-my-posh.omp.json".source = ../dotfiles/oh-my-posh.omp.json;
+    ".gitconfig".source = ../dotfiles/git/config;
+    ".gitignore".source = ../dotfiles/git/ignore;
+
+    ".alias".source = ../dotfiles/shell/alias;
+    ".zprofile".source = ../dotfiles/shell/zprofile;
+    ".zshrc".source = ../dotfiles/shell/zshrc;
+    "oh-my-posh.omp.json".source = ../dotfiles/shell/oh-my-posh.omp.json;
+
+    ".config/zed/settings.json".source = ../dotfiles/zed/settings.json;
   };
 }

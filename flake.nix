@@ -17,7 +17,7 @@
   let
     system = "aarch64-darwin";
     username = "trueberryless";
-    hostname = "tbl-macbook";
+    hostname = "shai-hulud";
 
     specialArgs =
       inputs

@@ -8,9 +8,9 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
-      # 'zap': uninstalls all formulae(and related files) not listed here.
-      # cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "zap";
     };
 
     # `brew install`
@@ -23,8 +23,6 @@
       "beeper"
       "clipbook"
       "firefox"
-      "spotify"
-      "visual-studio-code"
       "zen"
     ];
   };
