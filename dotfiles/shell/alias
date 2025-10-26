@@ -14,3 +14,6 @@ alias la="eza -laa --icons"
 alias tree="eza -T"
 alias psg="ps -ef | grep -i"
 alias envg="env | grep -i"
+
+alias zed='zeditor'
+alias code='zeditor'
