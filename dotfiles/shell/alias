@@ -1,6 +1,6 @@
 alias nix-switch='sudo darwin-rebuild switch --flake "$NIX_CONFIG_PATH#$(hostname -s)"'
 alias nix-update='nix flake update --flake $NIX_CONFIG_PATH'
-alias nix-gc='nix-collect-garbage --delete-old'
+alias nix-gc='sudo nix-collect-garbage --delete-old'
 
 alias rm="rm -i"
 alias cp="cp -i"
