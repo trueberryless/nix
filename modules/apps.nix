@@ -25,7 +25,6 @@ in {
       oh-my-posh
       postman
       raycast
-      spotify
       tmux
       tree
       zed-editor
