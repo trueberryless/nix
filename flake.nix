@@ -35,6 +35,7 @@
         ./modules/host-users.nix
         ./modules/nix-core.nix
         ./modules/system.nix
+        ./modules/wallpapers.nix
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
