@@ -3,6 +3,8 @@
   packages = with pkgs; [
     nodejs_22
     (pnpm.override { nodejs = nodejs_22; })
+    (yarn.override { nodejs = nodejs_22; })
+    bun
     zsh
   ];
 in pkgs.runCommand "dev-node22" {

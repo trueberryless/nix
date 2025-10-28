@@ -3,6 +3,8 @@
   packages = with pkgs; [
     nodejs_24
     (pnpm.override { nodejs = nodejs_24; })
+    (yarn.override { nodejs = nodejs_24; })
+    bun
     zsh
   ];
 in pkgs.runCommand "dev-node24" {
