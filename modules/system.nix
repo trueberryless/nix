@@ -243,7 +243,7 @@
 
         # Shows full name instead of username at the login window
         # Makes login screen more user-friendly
-        SHOWFULLNAME = true;
+        SHOWFULLNAME = false;
       };
     };
 
