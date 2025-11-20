@@ -16,7 +16,6 @@
     # `brew install`
     brews = [
       "gh"
-      "spotifyd"
     ];
 
     # `brew install --cask`

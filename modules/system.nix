@@ -189,7 +189,7 @@
           # Controls whether displays have separate Spaces
           # true = displays share Spaces (windows can span displays)
           # false = each display has independent Spaces
-          "spans-displays" = true;
+          "spans-displays" = false;
         };
 
         "com.apple.WindowManager" = {

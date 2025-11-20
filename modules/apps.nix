@@ -18,6 +18,7 @@ in {
       git
       google-chrome
       iterm2
+      jetbrains.datagrip
       jetbrains.idea-ultimate
       jetbrains.rider
       neofetch
@@ -27,6 +28,7 @@ in {
       raycast
       tmux
       tree
+      youtube-music
       zed-editor
       zoxide
     ]) ++ devShells;
