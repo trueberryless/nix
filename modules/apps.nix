@@ -28,7 +28,6 @@ in {
       raycast
       tmux
       tree
-      youtube-music
       zed-editor
       zoxide
     ]) ++ devShells;

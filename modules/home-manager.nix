@@ -3,7 +3,7 @@
   home.username = username;
   home.homeDirectory = "/Users/${username}";
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
@@ -21,5 +21,9 @@
 
     ".config/zed/settings.json".source = ../dotfiles/zed/settings.json;
     ".config/zed/keymap.json".source = ../dotfiles/zed/keymap.json;
+  };
+
+  services.ollama = {
+    enable = true;
   };
 }
