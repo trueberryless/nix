@@ -23,6 +23,8 @@
       "beeper"
       "clipbook"
       "firefox"
+      "olympus"
+      "steam"
       "zen"
     ];
   };
