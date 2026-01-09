@@ -33,6 +33,7 @@
         ./modules/fonts.nix
         ./modules/homebrew.nix
         ./modules/host-users.nix
+        ./modules/launchd.nix
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/wallpapers.nix

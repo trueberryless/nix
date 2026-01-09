@@ -17,9 +17,10 @@ in {
       eza
       git
       google-chrome
+      iproute2mac
       iterm2
       jetbrains.datagrip
-      jetbrains.idea-ultimate
+      jetbrains.idea
       jetbrains.rider
       neofetch
       nixd
