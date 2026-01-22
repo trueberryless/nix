@@ -6,6 +6,10 @@
   home.stateVersion = "25.11";
   programs.home-manager.enable = true;
 
+  imports = [
+    ./git-tools.nix
+  ];
+
   home.file = {
     ".gitconfig".source = ../dotfiles/git/config;
     ".gitignore".source = ../dotfiles/git/ignore;
