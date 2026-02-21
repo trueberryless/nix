@@ -16,6 +16,7 @@
     # `brew install`
     brews = [
       "gh"
+      "opencode"
     ];
 
     # `brew install --cask`
