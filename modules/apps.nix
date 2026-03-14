@@ -11,7 +11,6 @@ in {
     (with pkgs; [
       aldente
       bitwarden-desktop
-      code-cursor
       discord
       docker
       eza
@@ -22,7 +21,6 @@ in {
       jetbrains.datagrip
       jetbrains.idea
       jetbrains.rider
-      neofetch
       nixd
       oh-my-posh
       postman
