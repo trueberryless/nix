@@ -27,6 +27,7 @@ in {
       raycast
       tmux
       tree
+      vscode
       zed-editor
       zoxide
     ]) ++ devShells;
