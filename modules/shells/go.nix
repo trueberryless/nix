@@ -19,6 +19,8 @@ in pkgs.runCommand "dev-go" {
   wrapProgram $out/bin/dev-go \
     --prefix PATH : ${pkgs.lib.makeBinPath packages} \
     --set DEV_SHELL go \
-    --set GOPATH $HOME/go \
-    --set GOBIN $HOME/go/bin
+    --set GOPATH "$HOME/go" \
+    --set GOBIN "$HOME/go/bin" \
+    --set GOCACHE "$HOME/.cache/go-build" \
+    --set GOMODCACHE "$HOME/go/pkg/mod"
 '')
