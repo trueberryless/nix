@@ -1,9 +1,8 @@
 { pkgs, ... }:
 let
   devShellPaths = [
-    ./shells/node20.nix
-    ./shells/node22.nix
-    ./shells/node24.nix
+    ./shells/go.nix
+    ./shells/node.nix
   ];
   devShells = map (path: pkgs.callPackage path { }) devShellPaths;
 in {
@@ -15,7 +14,6 @@ in {
       docker
       eza
       git
-      go
       google-chrome
       iproute2mac
       iterm2
