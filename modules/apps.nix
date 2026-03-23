@@ -15,6 +15,7 @@ in {
       docker
       eza
       git
+      go
       google-chrome
       iproute2mac
       iterm2
