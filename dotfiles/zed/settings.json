@@ -15,7 +15,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Mocha",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "show_edit_predictions": false,
   "show_completions_on_input": false,

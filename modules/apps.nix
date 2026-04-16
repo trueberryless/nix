@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, copilot-cli, system, ... }:
 let
   devShellPaths = [
     ./shells/go.nix
@@ -11,9 +11,10 @@ in {
       aldente
       bitwarden-desktop
       discord
-      docker
       eza
+      fastfetch
       git
+      go
       google-chrome
       iproute2mac
       iterm2
@@ -23,14 +24,16 @@ in {
       nixd
       oh-my-posh
       postman
+      podman
       raycast
       tmux
       tree
       vscode
       zed-editor
       zoxide
-    ]) ++ devShells;
+    ])
+    ++ [ copilot-cli.packages.${system}.default ]
+    ++ devShells;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }
