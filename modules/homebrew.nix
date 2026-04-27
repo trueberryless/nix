@@ -26,7 +26,6 @@
       "olympus"
       "spotify"
       "steam"
-      "zed"
       "zen"
     ];
   };

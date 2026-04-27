@@ -18,8 +18,5 @@
     ".zprofile".source = ../dotfiles/shell/zprofile;
     ".zshrc".source = ../dotfiles/shell/zshrc;
     "oh-my-posh.omp.json".source = ../dotfiles/shell/oh-my-posh.omp.json;
-
-    ".config/zed/settings.json".source = ../dotfiles/zed/settings.json;
-    ".config/zed/keymap.json".source = ../dotfiles/zed/keymap.json;
   };
 }
