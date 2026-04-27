@@ -3,6 +3,7 @@ let
   devShellPaths = [
     ./shells/go.nix
     ./shells/node.nix
+    ./shells/rust.nix
   ];
   devShells = map (path: pkgs.callPackage path { }) devShellPaths;
 in {
@@ -29,7 +30,6 @@ in {
       tmux
       tree
       vscode
-      zed-editor
       zoxide
     ])
     ++ [ copilot-cli.packages.${system}.default ]

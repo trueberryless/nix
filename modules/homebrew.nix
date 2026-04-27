@@ -16,7 +16,6 @@
     # `brew install`
     brews = [
       "gh"
-      "opencode"
     ];
 
     # `brew install --cask`
@@ -27,6 +26,7 @@
       "olympus"
       "spotify"
       "steam"
+      "zed"
       "zen"
     ];
   };
