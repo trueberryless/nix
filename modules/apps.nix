@@ -22,6 +22,7 @@ in {
       jetbrains.datagrip
       jetbrains.idea
       jetbrains.rider
+      lazygit
       neovim
       nixd
       oh-my-posh
