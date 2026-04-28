@@ -31,7 +31,6 @@ in {
       raycast
       tmux
       tree
-      vscode
       zoxide
     ])
     ++ [ copilot-cli.packages.${system}.default ]
