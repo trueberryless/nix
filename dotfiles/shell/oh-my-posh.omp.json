@@ -5,31 +5,31 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#E36464",
+          "foreground": "#e67e80",
           "style": "plain",
           "template": "@{{ .UserName }} ",
           "type": "session"
         },
         {
-          "foreground": "#62ED8B",
+          "foreground": "#a7c080",
           "style": "plain",
           "template": "\u279c",
           "type": "text"
         },
         {
-          "foreground": "#FFD700",
+          "foreground": "#dbbc7f",
           "style": "plain",
           "template": "{{ with (env \"DEV_SHELL\") }} {{ . }} {{ end }}",
           "type": "text"
         },
         {
-          "foreground": "#62ED8B",
+          "foreground": "#a7c080",
           "style": "plain",
           "template": "{{ with (env \"DEV_SHELL\") }}\u279c{{ end }}",
           "type": "text"
         },
         {
-          "foreground": "#56B6C2",
+          "foreground": "#83c092",
           "properties": {
             "style": "folder"
           },
@@ -38,16 +38,16 @@
           "type": "path"
         },
         {
-          "foreground": "#D4AAFC",
+          "foreground": "#d699b6",
           "properties": {
             "branch_icon": ""
           },
           "style": "plain",
-          "template": " <#DDB15F>git(</>{{ .HEAD }}<#DDB15F>)</>",
+          "template": " <#dbbc7f>git(</>{{ .HEAD }}<#dbbc7f>)</>",
           "type": "git"
         },
         {
-          "foreground": "#DCB977",
+          "foreground": "#e69875",
           "style": "plain",
           "template": " \uf119",
           "type": "status"
