@@ -11,8 +11,9 @@
   ];
 
   home.file = {
-    ".gitconfig".source = ../dotfiles/git/config;
-    ".gitignore".source = ../dotfiles/git/ignore;
+    ".gitconfig".source = ../dotfiles/vcs/gitconfig;
+    ".gitignore".source = ../dotfiles/vcs/gitignore;
+    ".config/jj/config.toml".source = ../dotfiles/vcs/jjconfig;
 
     ".alias".source = ../dotfiles/shell/alias;
     ".zprofile".source = ../dotfiles/shell/zprofile;

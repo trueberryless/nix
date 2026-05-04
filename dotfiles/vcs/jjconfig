@@ -1,0 +1,10 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Felix Schneider"
+email = "did:plc:pbjvqaziagcyv2vqodldn5op"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/tangled.pub"

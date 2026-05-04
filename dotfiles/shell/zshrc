@@ -8,3 +8,8 @@ export NIX_CONFIG_PATH=~/.config/nix
 
 eval "$(oh-my-posh init zsh --config '~/oh-my-posh.omp.json')"
 eval "$(zoxide init zsh --cmd cd)"
+
+source <(COMPLETE=zsh jj)
+eval "$(gh completion -s zsh)"
+source <(npm completion)
+source <(pnpm completion zsh)

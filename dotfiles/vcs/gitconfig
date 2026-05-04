@@ -1,6 +1,7 @@
 [user]
   name = Felix Schneider
   email = 99918022+trueberryless@users.noreply.github.com
+  signingkey = ~/.ssh/github.pub
 
 [init]
   defaultBranch = main
@@ -10,6 +11,12 @@
 
 [pull]
   rebase = true
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  format = ssh
 
 [core]
   excludesFile = ~/.gitignore
