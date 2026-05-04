@@ -254,19 +254,19 @@
 
       # Remaps Caps Lock key to function as Escape
       # Popular among Vim users and reduces reaching for Escape key
-      remapCapsLockToEscape = false;
+      remapCapsLockToEscape = true;
 
       # Swaps the physical positions of left Command and left Alt keys
       # Useful for users coming from Windows/Linux expecting Ctrl in corner position
       swapLeftCommandAndLeftAlt = false;
 
       # Custom key mappings using keyboard HID codes
-      userKeyMapping = [
-        {
-          HIDKeyboardModifierMappingSrc = 30064771129; # Caps Lock (0x700000039)
-          HIDKeyboardModifierMappingDst = 30064771148; # Forward Delete (0x70000004C)
-        }
-      ];
+      # userKeyMapping = [
+      #   {
+      #     HIDKeyboardModifierMappingSrc = 30064771129; # Caps Lock (0x700000039)
+      #     HIDKeyboardModifierMappingDst = 30064771148; # Forward Delete (0x70000004C)
+      #   }
+      # ];
     };
   };
 
