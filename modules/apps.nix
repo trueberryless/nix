@@ -22,7 +22,9 @@ in {
       jetbrains.datagrip
       jetbrains.idea
       jetbrains.rider
+      jujutsu
       lazygit
+      lychee
       neovim
       nixd
       oh-my-posh
