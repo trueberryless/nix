@@ -11,5 +11,3 @@ eval "$(zoxide init zsh --cmd cd)"
 
 source <(COMPLETE=zsh jj)
 eval "$(gh completion -s zsh)"
-source <(npm completion)
-source <(pnpm completion zsh)
