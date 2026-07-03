@@ -11,10 +11,9 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    copilot-cli.url = "github:scarisey/copilot-cli-flake";
   };
 
-  outputs = inputs @ { self, nixpkgs, nix-darwin, home-manager, copilot-cli }:
+  outputs = inputs @ { self, nixpkgs, nix-darwin, home-manager }:
   let
     system = "aarch64-darwin";
     username = "trueberryless";

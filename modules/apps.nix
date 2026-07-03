@@ -1,4 +1,4 @@
-{ pkgs, copilot-cli, system, ... }:
+{ pkgs, ... }:
 let
   devShellPaths = [
     ./shells/go.nix
@@ -11,7 +11,6 @@ in {
     (with pkgs; [
       aldente
       bitwarden-desktop
-      discord
       eza
       fastfetch
       git
@@ -29,14 +28,17 @@ in {
       nixd
       oh-my-posh
       postman
-      podman
       raycast
       tmux
       tree
       zoxide
     ])
-    ++ [ copilot-cli.packages.${system}.default ]
     ++ devShells;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-39.8.10"
+    ];
+  };
 }

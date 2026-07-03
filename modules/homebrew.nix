@@ -16,12 +16,14 @@
     # `brew install`
     brews = [
       "gh"
+      "zizmor"
     ];
 
     # `brew install --cask`
     casks = [
       "beeper"
       "clipbook"
+      "discord"
       "firefox"
       "olympus"
       "spotify"
