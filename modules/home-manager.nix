@@ -12,6 +12,7 @@
 
   home.file = {
     ".gitconfig".source = ../dotfiles/vcs/gitconfig;
+    ".gitconfig-tangled".source = ../dotfiles/vcs/gitconfig-tangled;
     ".gitignore".source = ../dotfiles/vcs/gitignore;
     ".config/jj/config.toml".source = ../dotfiles/vcs/jjconfig;
 

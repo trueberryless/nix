@@ -1,0 +1,3 @@
+[user]
+  email = "did:plc:pbjvqaziagcyv2vqodldn5op"
+  signingkey = ~/.ssh/tangled.pub

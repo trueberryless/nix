@@ -21,5 +21,8 @@
 [core]
   excludesFile = ~/.gitignore
 
+[includeIf "hasconfig:remote.*.url:git@tangled.org:**"]
+  path = ~/.gitconfig-tangled
+
 [alias]
   prune-local = "!git fetch -p && git branch -vv | awk '/: gone]/ {print $1}' | grep -v '^\\*' | xargs -r git branch -D"
