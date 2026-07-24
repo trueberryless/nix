@@ -17,5 +17,7 @@ in pkgs.runCommand "dev-node" {
   ln -s ${pkgs.zsh}/bin/zsh $out/bin/dev-node
   wrapProgram $out/bin/dev-node \
     --prefix PATH : ${pkgs.lib.makeBinPath packages} \
+    --run 'export PNPM_HOME="$HOME/Library/pnpm"' \
+    --run 'export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"' \
     --set DEV_SHELL node
 '')
