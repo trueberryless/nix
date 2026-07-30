@@ -23,6 +23,7 @@
     casks = [
       "beeper"
       "clipbook"
+      "colibri-social/tap/colibri-social"
       "discord"
       "firefox"
       "olympus"
