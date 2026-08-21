@@ -26,6 +26,7 @@
       "colibri-social/tap/colibri-social"
       "discord"
       "firefox"
+      "obsidian"
       "olympus"
       "spotify"
       "steam"
