@@ -1,10 +1,7 @@
 { pkgs, self, ... }:
 let
-  # Directory in your git repo where wallpapers are stored
-  # Place your wallpaper images in ./wallpapers/ relative to your flake root
   wallpapersDir = self + /wallpapers;
 
-  # Create a package that contains all wallpapers
   wallpaperPackage = pkgs.stdenv.mkDerivation {
     name = "wallpaper-collection";
     src = wallpapersDir;
@@ -14,28 +11,29 @@ let
     '';
   };
 
-  # Script to set a random wallpaper
-  setRandomWallpaper = pkgs.writeShellScriptBin "set-random-wallpaper" ''
+  randwallInterpreter = pkgs.stdenv.mkDerivation {
+    name = "randwall-interpreter";
+    dontUnpack = true;
+    installPhase = ''
+      mkdir -p $out/bin
+      cp ${pkgs.bash}/bin/bash $out/bin/randwall
+    '';
+  };
+
+  randwall = pkgs.writeScriptBin "randwall" ''#!${randwallInterpreter}/bin/randwall
     set -e
 
     WALLPAPER_DIR="${wallpaperPackage}/wallpapers"
 
-    # Get all image files (jpg, jpeg, png, heic)
     mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.heic" \))
 
     if [ ''${#WALLPAPERS[@]} -eq 0 ]; then
-      echo "No wallpapers found in $WALLPAPER_DIR"
       exit 1
     fi
 
-    # Use random selection - different wallpaper each time you run the command
     INDEX=$((RANDOM % ''${#WALLPAPERS[@]}))
     SELECTED_WALLPAPER="''${WALLPAPERS[$INDEX]}"
 
-    echo "Setting wallpaper: $(basename "$SELECTED_WALLPAPER")"
-    echo "Full path: $SELECTED_WALLPAPER"
-
-    # Set wallpaper for all displays using Finder (more reliable on macOS)
     /usr/bin/osascript <<EOF
     tell application "Finder"
       set desktop picture to POSIX file "$SELECTED_WALLPAPER"
@@ -47,24 +45,19 @@ let
       end tell
     end tell
 EOF
-
-    echo "Wallpaper set successfully!"
   '';
-
 in
 {
-  # Add the wallpaper script to system packages
-  environment.systemPackages = [ setRandomWallpaper ];
+  environment.systemPackages = [ randwall ];
 
-  # Set up LaunchAgent using launchd.user.agents
   launchd.user.agents.wallpaper-rotation = {
     serviceConfig = {
-      ProgramArguments = [ "${setRandomWallpaper}/bin/set-random-wallpaper" ];
+      ProgramArguments = [ "${randwall}/bin/randwall" ];
       StartCalendarInterval = [
-        { Hour = 0; Minute = 0; }   # Midnight
-        { Hour = 6; Minute = 0; }   # 6 AM
-        { Hour = 12; Minute = 0; }  # Noon
-        { Hour = 18; Minute = 0; }  # 6 PM
+        { Hour = 0; Minute = 0; }
+        { Hour = 6; Minute = 0; }
+        { Hour = 12; Minute = 0; }
+        { Hour = 18; Minute = 0; }
       ];
       RunAtLoad = true;
       StandardOutPath = "/tmp/wallpaper-rotation.log";
