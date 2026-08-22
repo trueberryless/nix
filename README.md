@@ -55,7 +55,7 @@ sudo chown -R trueberryless:staff ~/.local
 
 ### alias
 
-Be careful which user runs commands and which config file these users will use to get available aliases. For example, the `nix-switch` alias [in this repo](/modules/sudo-alias.nix) allows the root user to run the alias, as it uses the `$SUDO_USER` to find the folder of the user which executes the command (in this case `trueberryless`). It is not possible to simply define aliases for root inside [`home-manager.nix`](/modules/home-manager.nix) as the sudo user uses a different `.zshrc` file.
+Be careful which user runs commands and which config file these users will use to get available aliases. For example, the `nix-switch` alias [in this repo](/dotfiles/shell/alias#L1) includes the `sudo` evelation inherently. You do not need to prepend `sudo` to it. If you switch to the root user entirely, you will lose access to these aliases as the root user uses a different `.zshrc` file and does not load your user's `~/.alias` file managed by `home-manager`.
 
 ## Resources
 
