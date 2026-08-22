@@ -34,8 +34,35 @@ sudo darwin-rebuild switch --flake ~/.config/nix
 Afterwards, this alias will be available to rebuild your config:
 
 ```bash
-sudo nix-switch
+nix-switch
 ```
+
+### Manual configs
+
+After applying the config, make sure to finish the setup manually:
+
+### SSH Keys
+
+Create the SSH keys for [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [Tangled](https://docs.tangled.org/quick-start-guide):
+
+- `~/.ssh/github.pub` (and its private key)
+- `~/.ssh/tangled.pub` (and its private key)
+
+### GitHub CLI Authentication
+
+Login to `gh`, so the `git-ucommit` script is authenticated:
+
+```bash
+gh auth login
+```
+
+### macOS Privacy
+
+Navigate to _System Settings > Privacy & Security_ and grant the following:
+
+- _Automation_: `randwall` needs to control `Finder` and `System Events`.
+- _Accessibility_: `Raycast` and `ClipBook`
+- _Full Disk Access_: `iTerm2` to prevent permission errors when managing dots in `~/.local` or `~/Library`.
 
 ## Troubleshooting
 
@@ -55,7 +82,7 @@ sudo chown -R trueberryless:staff ~/.local
 
 ### alias
 
-Be careful which user runs commands and which config file these users will use to get available aliases. For example, the `nix-switch` alias [in this repo](/dotfiles/shell/alias#L1) includes the `sudo` evelation inherently. You do not need to prepend `sudo` to it. If you switch to the root user entirely, you will lose access to these aliases as the root user uses a different `.zshrc` file and does not load your user's `~/.alias` file managed by `home-manager`.
+Be careful which user runs commands and which config file these users will use to get available aliases. The `nix-switch` alias [in this repo](/dotfiles/shell/alias#L1) includes the `sudo` elevation inherently. You do not need to prepend `sudo` to it. If you switch to the root user entirely, you will lose access to these aliases as the root user uses a different `.zshrc` file and does not load your user's `~/.alias` file managed by `home-manager`.
 
 ## Resources
 
