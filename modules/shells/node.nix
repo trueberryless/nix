@@ -1,9 +1,8 @@
 { pkgs, ... }:
 (let
   packages = with pkgs; [
-    nodejs_24
-    (pnpm.override { nodejs = nodejs_24; })
-    (yarn.override { nodejs = nodejs_24; })
+    nodejs_26
+    corepack
     bun
     zsh
   ];
