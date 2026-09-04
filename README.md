@@ -70,12 +70,17 @@ Delta manages its own checkouts under `$NIX_CONFIG_PATH/.delta/`. To have Delta'
    cat ~/.ssh/github-bot.pub
    ```
 
-2. Provision the bot `gh` token (a fine-grained PAT owned by the bot). It is read
-   by `.zshrc` inside Delta worktrees and set as `GH_TOKEN`:
+2. Provision a **classic** PAT with the `repo` scope, owned by the bot
+   (_GitHub > trueberryless-bot settings > Developer settings > Tokens (classic) >
+   Generate new token > select `repo`_).
+
+   The `repo` scope is required because the bot acts on *your* repos (as a
+   collaborator), and fine-grained PATs can only access repos owned by the bot's
+   own account. The token is read by `.zshrc` inside Delta worktrees and set as
+   `GH_TOKEN`:
 
    ```bash
    mkdir -p ~/.config/delta
-   gh auth login --hostname github.com --with-token < <(printf '%s\n' 'YOUR_BOT_PAT')
    printf '%s\n' 'YOUR_BOT_PAT' > ~/.config/delta/bot-token
    chmod 600 ~/.config/delta/bot-token
    ```
