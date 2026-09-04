@@ -11,3 +11,10 @@ eval "$(zoxide init zsh --cmd cd)"
 
 source <(COMPLETE=zsh jj)
 eval "$(gh completion -s zsh)"
+
+if [[ $PWD == */.delta/worktrees/* ]]; then
+  export GH_CONFIG_DIR="$HOME/.config/delta"
+  if [[ -r "$HOME/.config/delta/bot-token" ]]; then
+    export GH_TOKEN="$(<"$HOME/.config/delta/bot-token")"
+  fi
+fi

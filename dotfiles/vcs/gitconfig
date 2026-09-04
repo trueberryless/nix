@@ -26,3 +26,6 @@
 
 [alias]
   prune-local = "!git fetch -p && git branch -vv | awk '/: gone]/ {print $1}' | grep -v '^\\*' | xargs -r git branch -D"
+
+[includeIf "gitdir:**/.delta/**"]
+  path = ~/.config/delta/gitconfig

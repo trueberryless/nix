@@ -1,0 +1,10 @@
+[user]
+  name = trueberryless-bot
+  email = 324652437+trueberryless-bot@users.noreply.github.com
+  signingkey = ~/.ssh/github-bot.pub
+
+[commit]
+  gpgsign = true
+
+[core]
+  sshCommand = ssh -i ~/.ssh/github-bot -o IdentitiesOnly=yes
