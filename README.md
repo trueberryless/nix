@@ -56,6 +56,40 @@ Login to `gh`, so the `git-ucommit` script is authenticated:
 gh auth login
 ```
 
+### Delta bot (optional)
+
+Delta manages its own checkouts under `$NIX_CONFIG_PATH/.delta/`. To have Delta's
+`git` and `gh` act as `trueberryless-bot`:
+
+1. Create the bot SSH key and add its **public** key to the bot account as a
+   **Signing key** (_GitHub > trueberryless-bot settings > SSH and GPG keys > New
+   SSH key > Key type: Signing key_):
+
+   ```bash
+   ssh-keygen -t ed25519 -C 'trueberryless-bot@users.noreply.github.com' -f ~/.ssh/github-bot
+   cat ~/.ssh/github-bot.pub
+   ```
+
+2. Provision a **classic** PAT with the `repo` scope, owned by the bot
+   (_GitHub > trueberryless-bot settings > Developer settings > Tokens (classic) >
+   Generate new token > select `repo`_).
+
+   The `repo` scope is required because the bot acts on *your* repos (as a
+   collaborator), and fine-grained PATs can only access repos owned by the bot's
+   own account. The token is read by `.zshrc` inside Delta worktrees and set as
+   `GH_TOKEN`:
+
+   ```bash
+   mkdir -p ~/.config/delta
+   printf '%s\n' 'YOUR_BOT_PAT' > ~/.config/delta/bot-token
+   chmod 600 ~/.config/delta/bot-token
+   ```
+
+   The reason the token is read from a file: `gh` on macOS resolves the keychain
+   by service name (`gh:github.com`) and can return the *other* account's token
+   when two accounts share a host. `GH_TOKEN` overrides stored credentials, so
+   this guarantees the bot token is used inside Delta checkouts.
+
 ### macOS Privacy
 
 Navigate to _System Settings > Privacy & Security_ and grant the following:
