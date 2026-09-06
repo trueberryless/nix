@@ -23,6 +23,7 @@
     ".config/jj/config.toml".source = ../dotfiles/vcs/jjconfig;
 
     ".config/delta/gitconfig".source = ../dotfiles/delta/gitconfig;
+    ".config/delta/AGENTS.md".source = ../dotfiles/delta/AGENTS.md;
 
     ".alias".source = ../dotfiles/shell/alias;
     ".zprofile".source = ../dotfiles/shell/zprofile;
