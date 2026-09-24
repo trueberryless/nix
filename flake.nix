@@ -30,6 +30,7 @@
       inherit system specialArgs;
       modules = [
         ./modules/apps.nix
+        ./modules/claude-code.nix
         ./modules/fonts.nix
         ./modules/homebrew.nix
         ./modules/host-users.nix

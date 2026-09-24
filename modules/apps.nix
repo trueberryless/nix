@@ -3,6 +3,8 @@ let
   devShellPaths = [
     ./shells/go.nix
     ./shells/node.nix
+    ./shells/node24.nix
+    ./shells/python.nix
     ./shells/rust.nix
   ];
   devShells = map (path: pkgs.callPackage path { }) devShellPaths;
@@ -27,6 +29,7 @@ in {
       neovim
       nixd
       oh-my-posh
+      opencode
       postman
       raycast
       tmux

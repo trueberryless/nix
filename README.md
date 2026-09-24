@@ -56,10 +56,10 @@ Login to `gh`, so the `git-ucommit` script is authenticated:
 gh auth login
 ```
 
-### Delta bot
+### GitHub bot (Claude Code)
 
-Delta's Git checkouts under `.delta/` run `git` and `gh` as the `trueberryless-bot`
-account; your own terminal stays `trueberryless`. Set it up once:
+Claude Code runs every `git` and `gh` command as `trueberryless-bot`, in any
+directory, while your own terminal stays `trueberryless`. Set it up once:
 
 1. Create the bot SSH key and add its **public** key to the bot account as a **Signing key**:
 
@@ -67,19 +67,29 @@ account; your own terminal stays `trueberryless`. Set it up once:
    ssh-keygen -t ed25519 -C 'trueberryless-bot@users.noreply.github.com' -f ~/.ssh/github-bot
    ```
 
-2. Create a classic PAT with the `repo` scope on the bot account, then:
+2. Create a classic PAT with the `repo` and `workflow` scopes on the bot account, then:
 
    ```bash
-   mkdir -p ~/.config/delta
-   printf '%s\n' 'YOUR_BOT_PAT' > ~/.config/delta/bot-token
-   chmod 600 ~/.config/delta/bot-token
+   mkdir -p -m 700 ~/.config/github-bot
+   printf '%s
+' 'YOUR_BOT_PAT' > ~/.config/github-bot/token
+   chmod 600 ~/.config/github-bot/token
    ```
 
-Inside a Delta checkout, git uses the bot identity and signs with the bot key;
-`gh` reads the token from `bot-token` (as `GH_TOKEN`). To open a pull request,
-the agent forks the repo as the bot and opens the PR from the fork into the
-original repo. Outside `.delta/`, your `~/.config/gh` stays the human account,
-so the two never interfere.
+[`modules/claude-code.nix`](/modules/claude-code.nix) installs Claude Code managed
+settings (`/Library/Application Support/ClaudeCode/managed-settings.d/50-github-bot.json`)
+whose `env` block sets:
+
+- `GIT_CONFIG_*`: bot name, email and signing key, plus a GitHub credential helper
+  that reads the bot token and rewrites SSH GitHub remotes to HTTPS. This is git's
+  highest-priority config scope, so it overrides `~/.gitconfig` and repo-local config.
+- `GH_CONFIG_DIR=~/.config/github-bot/gh`: a bot-only `gh` config whose `hosts.yml`
+  is regenerated from the token on every switch (rerun `nix-switch` after rotating it).
+
+It also links [`dotfiles/claude/CLAUDE.md`](/dotfiles/claude/CLAUDE.md) to
+`~/.claude/CLAUDE.md`. Claude pushes directly to repos where the bot is a
+collaborator and otherwise forks as the bot and opens the PR from the fork.
+Check it from a Claude Code session with `gh api user --jq .login`.
 
 ### macOS Privacy
 
