@@ -89,7 +89,9 @@ whose `env` block sets:
 It also links [`dotfiles/claude/CLAUDE.md`](/dotfiles/claude/CLAUDE.md) to
 `~/.claude/CLAUDE.md` and every file in [`dotfiles/claude/rules`](/dotfiles/claude/rules)
 into `~/.claude/rules/`, including the path-scoped code style rules in
-`rules/code-style/` that load only when Claude reads matching files. Claude pushes directly to repos where the bot is a
+`rules/code-style/` that load only when Claude reads matching files, and every
+file in [`dotfiles/claude/skills`](/dotfiles/claude/skills) into `~/.claude/skills/`
+(e.g. the `starlight-plugin-modernization` skill). Claude pushes directly to repos where the bot is a
 collaborator and otherwise forks as the bot and opens the PR from the fork.
 Check it from a Claude Code session with `gh api user --jq .login`.
 

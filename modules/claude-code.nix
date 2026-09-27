@@ -77,6 +77,10 @@ in
         source = ../dotfiles/claude/rules;
         recursive = true;
       };
+      home.file.".claude/skills" = {
+        source = ../dotfiles/claude/skills;
+        recursive = true;
+      };
 
       home.activation.claudeBotGh = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         if [ -r "${botToken}" ]; then
