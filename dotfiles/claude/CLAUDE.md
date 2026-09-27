@@ -26,3 +26,20 @@ Node, pnpm, npm and bun are not on the default `PATH`. Run them through the Nix 
 shell: `dev-node -c 'pnpm install && pnpm build'` (Node 26), or `dev-node24 -c '...'`
 for projects that need Node 24. Each call is a fresh shell, so chain dependent
 commands inside one `-c` string.
+
+# Claude Code configuration
+
+My Claude Code config is managed by nix-darwin + home-manager from the repo at
+`~/repos/trueberryless/nix`. The files under `~/.claude/` are read-only symlinks
+into the Nix store. To change `CLAUDE.md`, rules, or other Claude config, edit the
+sources in that repo under `dotfiles/claude/` (wired up in `modules/claude-code.nix`),
+never the files under `~/.claude/`. Then:
+
+- `git add` any new files (flakes only see tracked files), but never commit or push.
+- Tell me to run `nix-switch` to activate the change.
+
+# Code style
+
+My code style lives in path-scoped rules in `~/.claude/rules/code-style/`, which load
+automatically when you read matching files. When starting a new JS/TS project, or
+writing code before any source file has been read, read the relevant files there first.

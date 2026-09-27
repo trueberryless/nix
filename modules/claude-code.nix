@@ -72,6 +72,11 @@ in
     { lib, ... }:
     {
       home.file.".claude/CLAUDE.md".source = ../dotfiles/claude/CLAUDE.md;
+      # Linked file by file so ~/.claude/rules itself stays writable
+      home.file.".claude/rules" = {
+        source = ../dotfiles/claude/rules;
+        recursive = true;
+      };
 
       home.activation.claudeBotGh = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         if [ -r "${botToken}" ]; then

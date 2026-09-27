@@ -87,7 +87,9 @@ whose `env` block sets:
   is regenerated from the token on every switch (rerun `nix-switch` after rotating it).
 
 It also links [`dotfiles/claude/CLAUDE.md`](/dotfiles/claude/CLAUDE.md) to
-`~/.claude/CLAUDE.md`. Claude pushes directly to repos where the bot is a
+`~/.claude/CLAUDE.md` and every file in [`dotfiles/claude/rules`](/dotfiles/claude/rules)
+into `~/.claude/rules/`, including the path-scoped code style rules in
+`rules/code-style/` that load only when Claude reads matching files. Claude pushes directly to repos where the bot is a
 collaborator and otherwise forks as the bot and opens the PR from the fork.
 Check it from a Claude Code session with `gh api user --jq .login`.
 
