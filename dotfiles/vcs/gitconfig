@@ -24,5 +24,8 @@
 [includeIf "hasconfig:remote.*.url:git@tangled.org:**"]
   path = ~/.gitconfig-tangled
 
+[includeIf "gitdir:~/tuwien/pp/"]
+  path = ~/.gitconfig-tuwien-pp
+
 [alias]
   prune-local = "!git fetch -p && git branch -vv | awk '/: gone]/ {print $1}' | grep -v '^\\*' | xargs -r git branch -D"
