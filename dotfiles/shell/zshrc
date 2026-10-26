@@ -4,6 +4,8 @@ export VISUAL="$EDITOR"
 
 export NIX_CONFIG_PATH=~/.config/nix
 
+export MANPATH="$(xcrun --show-sdk-path)/usr/share/man:$MANPATH"
+
 . ~/.alias
 
 eval "$(oh-my-posh init zsh --config '~/oh-my-posh.omp.json')"
