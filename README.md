@@ -71,8 +71,7 @@ directory, while your own terminal stays `trueberryless`. Set it up once:
 
    ```bash
    mkdir -p -m 700 ~/.config/github-bot
-   printf '%s
-' 'YOUR_BOT_PAT' > ~/.config/github-bot/token
+   printf '%s\n' 'YOUR_BOT_PAT' > ~/.config/github-bot/token
    chmod 600 ~/.config/github-bot/token
    ```
 
