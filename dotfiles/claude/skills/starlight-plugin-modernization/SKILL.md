@@ -1,6 +1,6 @@
 ---
 name: starlight-plugin-modernization
-description: Modernize a trueberryless-org Starlight plugin monorepo (pnpm workspace with packages/PLUGIN and a docs/ site) — update Astro/Starlight and all dependencies following release notes, standardize package.json metadata, move tsconfig to the repo root, refactor into HiDeoo/starlight-blog-style small pure functions, add Sätteri + unified Markdown processor support, fix trueberryless.org domains and repo-relative links, and write changesets. Use this whenever the user asks to update, upgrade, modernize, clean up, refactor or "make functional again" one of their Starlight plugins (starlight-*), mentions bumping Astro/Starlight versions in a plugin repo, asks to follow HiDeoo's plugin style, or wants the same refactors applied as in starlight-cooler-credit — even if they only mention one part of it.
+description: Modernize a trueberryless Starlight plugin monorepo (pnpm workspace with packages/PLUGIN and a docs/ site) — update Astro/Starlight and all dependencies following release notes, standardize package.json metadata, move tsconfig to the repo root, refactor into HiDeoo/starlight-blog-style small pure functions, add Sätteri + unified Markdown processor support, fix trueberryless.org domains and repo-relative links, and write changesets. Use this whenever the user asks to update, upgrade, modernize, clean up, refactor or "make functional again" one of their Starlight plugins (starlight-*), mentions bumping Astro/Starlight versions in a plugin repo, asks to follow HiDeoo's plugin style, or wants the same refactors applied as in starlight-cooler-credit — even if they only mention one part of it.
 ---
 
 # Starlight plugin modernization
@@ -9,7 +9,7 @@ You are bringing one of trueberryless' Starlight plugin monorepos up to the curr
 
 ## Reference implementations
 
-- **Reference result:** `trueberryless-org/starlight-cooler-credit` on `main` (release v0.7.0). When you are unsure what the finished state looks like, compare with it.
+- **Reference result:** `trueberryless/starlight-cooler-credit` on `main` (release v0.7.0). When you are unsure what the finished state looks like, compare with it.
 - **Style reference:** HiDeoo's plugins, above all `HiDeoo/starlight-blog` and `HiDeoo/starlight-image-zoom`. The user wants their codebases to read like HiDeoo's because that style is easy to maintain. **When in doubt, do exactly what starlight-blog does.** Read its `packages/starlight-blog/index.ts`, `libs/*.ts`, `locals.d.ts`, `virtual.d.ts`, `package.json`, root `tsconfig.json` and `docs/tsconfig.json` before refactoring. If GitHub is out of scope for your tools, fetch them with `curl -sSL https://raw.githubusercontent.com/HiDeoo/starlight-blog/main/<path>` or `npm pack starlight-blog`.
 
 ## Guiding principles (learned the hard way)

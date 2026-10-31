@@ -11,7 +11,7 @@ Goal: code that reads like HiDeoo's plugins — small, pure, well-named function
 
   export function throwPluginError(message: string, hint?: string): never {
     const hintHeader = "See the error report above for more informations.";
-    const hintFooter = `\n\nIf you believe this is a bug, please file an issue at https://github.com/trueberryless-org/<repo>/issues/new`;
+    const hintFooter = `\n\nIf you believe this is a bug, please file an issue at https://github.com/trueberryless/<repo>/issues/new`;
 
     throw new AstroError(message, hint ? `${hint}${hintFooter}` : `${hintHeader}${hintFooter}`);
   }

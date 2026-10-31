@@ -50,10 +50,10 @@ Field order matters for consistency; adapt name, description and keywords.
   "homepage": "https://<project>.netlify.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trueberryless-org/<repo>.git",
+    "url": "git+https://github.com/trueberryless/<repo>.git",
     "directory": "packages/<plugin>"
   },
-  "bugs": "https://github.com/trueberryless-org/<repo>/issues"
+  "bugs": "https://github.com/trueberryless/<repo>/issues"
 }
 ```
 

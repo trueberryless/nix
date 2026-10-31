@@ -20,8 +20,8 @@ The custom domain `trueberryless.org` was removed from all projects.
 ## Repo-relative links
 
 READMEs, CHANGELOGs and changesets are rendered on npm, where repo-relative links break. Convert every link relative to the repo root (`/LICENSE`, `./src/content/docs/`, `/packages/<plugin>/`) to an absolute GitHub URL:
-- files: `https://github.com/trueberryless-org/<repo>/blob/main/<path>`
-- directories: `https://github.com/trueberryless-org/<repo>/tree/main/<path>`
+- files: `https://github.com/trueberryless/<repo>/blob/main/<path>`
+- directories: `https://github.com/trueberryless/<repo>/tree/main/<path>`
 
 Links inside docs pages (e.g. `/getting-started/`) are site links — leave them relative.
 
