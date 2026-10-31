@@ -28,6 +28,7 @@
       "firefox"
       "obsidian"
       "olympus"
+      "raycast"
       "spotify"
       "steam"
       "zed"

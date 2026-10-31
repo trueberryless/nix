@@ -30,7 +30,6 @@ in {
       oh-my-posh
       opencode
       postman
-      raycast
       tmux
       tree
       zoxide
