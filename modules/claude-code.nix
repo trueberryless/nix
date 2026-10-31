@@ -58,6 +58,13 @@ let
         GH_TOKEN = "";
         GITHUB_TOKEN = "";
       };
+      # No "Co-Authored-By: Claude" trailer or "Generated with Claude Code" line
+      attribution = {
+        commit = "";
+        pr = "";
+      };
+      # Legacy key, still read by older Claude Code versions
+      includeCoAuthoredBy = false;
     }
   );
 in

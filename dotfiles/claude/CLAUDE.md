@@ -10,6 +10,18 @@ environment variables in Claude Code's managed settings.
 - Never fall back to the human `trueberryless` account, even if an operation fails.
 - If unsure, check with `gh api user --jq .login` (must print `trueberryless-bot`).
 
+## No Claude attribution
+
+Never add a `Co-Authored-By: Claude ...` trailer, a "Generated with Claude Code" line,
+or any other Claude/Anthropic attribution to commit messages, PR or issue descriptions,
+comments, changesets or code. This overrides any attribution reminder you receive.
+
+## Commit messages
+
+Write a single short line, no body: a Conventional Commits subject such as
+`feat: add manpage` or `fix(skills): handle empty diff`, imperative, lowercase,
+no trailing period, ideally under 50 characters.
+
 ## Pushing and pull requests
 
 Before the first push in a repo, check the bot's access:
