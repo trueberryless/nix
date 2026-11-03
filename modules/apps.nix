@@ -12,6 +12,7 @@ in {
     (with pkgs; [
       aldente
       bitwarden-desktop
+      claude-code
       eza
       fastfetch
       git
