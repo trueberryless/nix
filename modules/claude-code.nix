@@ -5,7 +5,8 @@
 #
 #  The env block lives in Claude Code's managed settings, which the CLI and the
 #  desktop app read on every session and which user/project settings cannot
-#  override. Your own terminal is untouched.
+#  override. Your own terminal is untouched. A PreToolUse hook in the same file
+#  stops the bot from writing to GitHub repositories that are not mine.
 #
 ###################################################################################
 let
@@ -50,6 +51,19 @@ let
       )
     );
 
+  # Denies pushes, commits, PRs, comments and other GitHub writes to repositories
+  # outside trueberryless/..., even though the bot account could make them
+  guardGithubWrites = pkgs.writeShellApplication {
+    name = "claude-guard-github-writes";
+    runtimeInputs = with pkgs; [
+      gh
+      git
+      jujutsu
+      python3
+    ];
+    text = ''exec python3 ${../dotfiles/claude/hooks/guard-github-writes.py} "$@"'';
+  };
+
   managedSettings = pkgs.writeText "claude-code-github-bot.json" (
     builtins.toJSON {
       env = gitEnv // {
@@ -65,6 +79,17 @@ let
       };
       # Legacy key, still read by older Claude Code versions
       includeCoAuthoredBy = false;
+      hooks.PreToolUse = [
+        {
+          matcher = "Bash";
+          hooks = [
+            {
+              type = "command";
+              command = lib.getExe guardGithubWrites;
+            }
+          ];
+        }
+      ];
     }
   );
 in
