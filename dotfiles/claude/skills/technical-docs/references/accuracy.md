@@ -84,6 +84,7 @@ Reasons make prose flow, which makes them the most dangerous sentences to write.
 - Third-party products change. Authentication methods get retired, versions get dropped, limits change. When docs name such a fact, check the official source and note the date in your head. Fetch the product's changelog or API docs instead of trusting memory.
 - If a reviewer says a third-party method is retired, verify it at the source before acting. If true, search the whole repository (docs, examples, READMEs, scripts, source comments) for the same method and fix the user-facing mentions. Mention the ones you could not change, such as source comments feeding generated pages, in your handover.
 - Do not hardcode version numbers, prices, quotas or dates in prose unless the reader needs them. When you must, state which version they apply to.
+- Describe the state you verified, in the present tense. Do not write about when something changed. "The forge doesn't accept X" is a verified present fact, while "the forge retired X in 2026" is a story that goes stale and invites a date error.
 - Benchmark or size tables that the maintainer asked to keep stay as they are. Do not edit numbers you cannot regenerate, but make sure the prose around them does not overstate what they show ("not a like-for-like comparison" when the two sides do different things).
 
 ## 7. Code samples and names

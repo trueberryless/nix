@@ -34,7 +34,8 @@ When in doubt, imagine the reader on a deadline with a specific question. Would 
 - Internal file paths and test setup that a user never touches (a test setup file that records which methods are called, a script that measures bundles).
 - Contributor-only recording, fixture or release steps placed inside user-facing pages (move them to one page in the contributing section, with one clearly named section per item).
 - "How we ensure quality" statements, unless the user needs the guarantee to understand a level of support (then say what the level means in user terms, and mention the check in a clause at most).
-- Roadmap talk, history and plans.
+- Roadmap talk, plans and promises about the future.
+- History: how the project got here, what an earlier version did, what changed, why a decision was made in the past. See "Current state, not history" below.
 
 **Trim to what the reader needs to do:**
 
@@ -52,6 +53,45 @@ When in doubt, imagine the reader on a deadline with a specific question. Would 
 
 **Never silently delete a user-relevant fact.** If a rewrite moves a fact, make sure it lands somewhere a reader can find it, and report where.
 
+### Current state, not history
+
+Docs are read to find out how the project works today. They describe the present, and the present only.
+
+What to remove or rewrite:
+
+- Change narration: "now supports", "no longer needs", "has been replaced by", "previously", "used to", "formerly", "newly added", "recently", "as of this release", "in older versions".
+- Origin stories and design history: "originally", "we started with", "after trying X we chose Y", "this was added because of issue 123".
+- Time-bound hedges: "currently" and "for now" in front of a behaviour that is simply how it works. Keep them only when the state really is transitional and the reader needs to know it will change (for example an experimental feature), and then say what the reader should do about it.
+- Plans and promises: "will be supported soon", "a future version will".
+- Statements about other people's past: "the forge retired X in 2026". Say what is true now ("the forge doesn't accept X") and, if useful, what to use instead.
+
+How to rewrite:
+
+| History | Current state |
+| --- | --- |
+| The provider now retries once after a short rate limit. | After a short rate limit, the provider retries once. |
+| Bitbucket Cloud has retired app passwords, so they no longer work. | Bitbucket Cloud doesn't accept app passwords. Use an API token. |
+| This option used to be called `host`, and `baseUrl` replaces it. | `baseUrl` sets the host of the instance. |
+| Gitee support was added experimentally and is being verified. | The Gitee provider is experimental. Its behaviour hasn't been verified against the live forge, so most of its capabilities are marked experimental. |
+| We changed merging to be asynchronous because direct merges timed out. | `merge()` requests a direct merge through the asynchronous merge API and waits for the result. |
+
+If a sentence only has meaning as a comparison with the past, and removing the history leaves nothing, delete it.
+
+What stays, because it is current state:
+
+- Version requirements and availability the reader needs to choose correctly: "requires version 3.13 or later", "Dependabot alerts need 3.8 or later".
+- Deprecations: what is deprecated, what to use instead, and what happens if the reader keeps using it. Add a date or a version only when the reader needs it to plan.
+- Present-tense reasons: why the behaviour is what it is today, when it is verified (see `accuracy.md` section 5).
+- Experimental or unstable status, stated as a present fact with its consequence for the reader.
+
+Where history is the subject, it belongs in its own place and not in the main docs:
+
+- Blog posts and announcements.
+- Changelogs and release notes.
+- Migration and upgrade guides, which describe differences between versions on purpose. Even these should tell the reader what to do today first, and keep the past short.
+
+When the maintainer asks you to keep a piece of history in the main docs, keep it, and keep it short.
+
 ## 3. The audit step
 
 Before rewording a page, write down for each section: keep, trim, move or remove, and why. Do this for the whole docs set first, because you will notice duplicates and misplaced material only by seeing everything.
@@ -59,6 +99,7 @@ Before rewording a page, write down for each section: keep, trim, move or remove
 - Report the plan briefly and proceed with what is clearly right.
 - Ask the maintainer only about decisions that are genuinely theirs: a table that is half marketing, an audience question (do contributing docs get the same rewrite?), a section whose removal changes what the project promises. Give a recommendation with the question.
 - Keep a short list of removals and moves for the handover.
+- While auditing, mark every sentence that narrates change or history. They are removal or rewrite candidates.
 
 ## 4. Page types and their structure
 

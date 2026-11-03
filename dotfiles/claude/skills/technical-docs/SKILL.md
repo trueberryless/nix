@@ -8,11 +8,12 @@ argument-hint: "[path | page | whole docs] (default: the docs of the current rep
 
 Write documentation the way a good teacher explains a tool to a colleague who is smart but new to it. Warm, direct, connected, and never wrong. I set a very high bar, I review the result paragraph by paragraph, and anything that doesn't read well gets redone. Take the time to do it properly the first time. Quality matters more than speed.
 
-Three things matter, in this order:
+Four things matter, in this order:
 
 1. **Correctness.** A wrong sentence is worse than a missing one. Never write a statement you are not sure of. Verify against the code. See `references/accuracy.md`.
 2. **Relevance.** Document what a user of the project needs to know to use it, and nothing about how the repository itself is built, tested or checked. See `references/content.md`.
-3. **Readability and flow.** Text that a person enjoys reading from top to bottom, with reasons attached to rules and sentences that lean on each other. See `references/voice-and-flow.md`.
+3. **The current state, not the story.** Docs describe how the project works right now. They do not tell how it came to be, what it used to do or what changed. See `references/content.md` section 2, and the time words in `references/voice-and-flow.md` section 8.
+4. **Readability and flow.** Text that a person enjoys reading from top to bottom, with reasons attached to rules and sentences that lean on each other. See `references/voice-and-flow.md`.
 
 ## The failure this skill exists to prevent
 
@@ -25,6 +26,18 @@ and its fix, which says the same thing in connected, reader-facing prose:
 > If you leave out `auth`, you get an anonymous provider. It sends no credentials and can only make public reads, so writes, notifications and subscriptions all report `false` in its capabilities:
 
 Another typical failure is a fragment that points at the previous sentence instead of explaining ("Use it in browser code."). It gives no reason and no condition. Always say why and when.
+
+## Current state, never history
+
+The main docs (getting started, guides, concepts, reference, provider and integration pages, examples, contributing) describe the present and nothing else. A reader is looking at the project as it is today, and a sentence about the past makes them work out what still applies.
+
+- Write what is true now, in the present tense, as a plain fact: "Bitbucket Cloud doesn't accept app passwords", not "Bitbucket Cloud retired app passwords, so they no longer work".
+- Do not write "previously", "used to", "no longer", "now" (as in "now supports"), "newly", "recently", "as of", "since we changed", "in the old version", "originally", "the project started as" or "we decided to". Do not narrate design decisions as a story of what was tried. A reason in the present tense is welcome: "the provider can't read branch policies, so `merge()` requires a method".
+- When rewriting existing docs, convert history into the current fact. If nothing current is left once the history is removed, delete the sentence.
+- Exceptions, where change over time is the subject: blog posts, changelogs and release notes, and migration or upgrade guides (which still say what the reader should do today). Version availability that the reader needs to choose correctly ("requires 3.13 or later") is current state, not history, and stays.
+- Deprecations are current state too. Say what is deprecated, what to use instead, and what happens if you keep using it. Leave out when and why it was deprecated unless the reader needs a date to plan.
+
+See `references/content.md` section 2 for details and examples.
 
 ## Workflow
 
@@ -71,6 +84,7 @@ Read each rewritten page once more from top to bottom as someone who has never s
 - Does every rule or limitation say why, and what to do instead?
 - Is anything vague ("can", "may", "usually") where the behaviour is deterministic?
 - Is anything there that the reader does not need?
+- Does any sentence tell a story (what changed, what used to be) instead of stating how it works today?
 - Would I be comfortable if the maintainer read this paragraph aloud?
 
 Rewrite what fails. Repeat until it is good.
@@ -98,6 +112,7 @@ Treat every review comment (mine, a maintainer's, a bot's) as a claim to check, 
 - Introduce each code block with a sentence about what it shows. Follow it with what happens or what to expect.
 - Put asides in callouts and "read more" links at the end of sections.
 - Document user-facing behaviour only. Move or remove anything about how the repository is built or checked.
+- Describe the current state in the present tense. No history, no "used to", "no longer" or "now" outside blog posts, changelogs and migration guides.
 - Use bold and lists sparingly, and no emojis in prose.
 - Never write what you have not verified.
 

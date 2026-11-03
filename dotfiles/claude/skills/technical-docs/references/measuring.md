@@ -40,5 +40,6 @@ Reference pages, provider pages and examples can sit lower on "you" and higher o
 - Em dashes: check the project's convention. If there is none, avoid them.
 - Run the project's linter, docs tests, docs build and link check with fragments. A broken anchor is a real defect.
 - Search for leftover placeholders and for words from `voice-and-flow.md` section 8 that you meant to remove ("simply", "just", "can" used as a hedge, "in order to").
+- Search the pages you wrote for history words: `grep -niE "\b(no longer|previously|used to|formerly|originally|recently|newly|now (supports|requires|returns|uses)|as of|in older versions|has been (replaced|removed|changed)|we (changed|decided|added))\b"`. Judge every hit. Some are harmless ("used to verify deliveries", "as of" in a version requirement), some are sentences to rewrite as current state, and some are deliberate exceptions (blog post, changelog, migration guide).
 
 Do not try to defeat or satisfy an AI-text detector. Statistical traces cannot be removed by wording tricks, and chasing them damages the writing. Write well and verify the facts.

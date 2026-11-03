@@ -122,6 +122,7 @@ Vagueness reads as unsure, and unsure reads as unreliable.
 - "In order to" where "to" works. "Utilise", "leverage", "facilitate". "A number of". "Various".
 - "etc." and "and so on" at the end of a list the reader needs complete. List all items or say what the list covers.
 - Passive voice that hides the actor ("is called", "is returned") when saying who does it is clearer. Passive is fine when the actor is irrelevant.
+- Time words that turn a fact into a story: "now", "no longer", "previously", "used to", "formerly", "recently", "newly", "as of", "for now", "at the moment", "currently" when it is not needed. Docs use the present tense and describe how things are. See `content.md` section 2, "Current state, not history". "Currently" and "at the moment" are acceptable only for a state that really is transitional and that the reader must plan around.
 - Future tense for ordinary behaviour. "The provider retries once" not "The provider will retry once", except when describing the result of a step ("This will generate...").
 
 ## 9. Headings and frontmatter descriptions
@@ -182,6 +183,7 @@ These are what readers pick up on, even without being able to name them. Remove 
 - A summary or motivational closing.
 - Unexplained rules: statements of what is and is not allowed without saying why.
 - Invented reasons and filler consequences that sound plausible.
+- Storytelling: sentences about what the project used to do, what changed, or why something was decided in the past, instead of how it works today.
 
 ## 15. Before and after examples
 
